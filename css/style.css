@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+}
+
+
+#reset {
+  position: absolute;
+  left:50%;
+  top:10px;
+  margin-left:-400px;
+  background: #444;
+  border: 1px solid #555;
+  color: #888;
+  padding: 6px 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#fluid-env {
+  margin:0 auto;
+  display:block;
+}
+
+input{
+	min-width: 180px;
+	outline: none;
+}
