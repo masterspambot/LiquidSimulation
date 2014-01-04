@@ -4,6 +4,10 @@
   overflow:hidden;
 }
 
+body{
+  overflow-y: auto;
+}
+
 
 #reset {
   position: absolute;
