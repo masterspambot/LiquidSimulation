@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/metro-bootstrap.css" media="screen" type="text/css" />
+	<link rel="stylesheet" href="css/metro-bootstrap-responsive.css" media="screen" type="text/css" />
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+</head>
+<body class="metro">
+	<div class=" grid fluid">
+		<div class="row" style="background-color: #333333">
+			<div class="span12">
+				<canvas id="fluid-env"></canvas>
+			</div>
+		</div>
+	<div class="container grid">
+		<div class="row">
+			<div class="span12">
+				<legend>Animacja</legend>
+				<label>Ilość cząstek</label>
+				<input id="groups" type="number" value="150" max="300" min="0" step="50">
+
+				<a id="start" class="button success">
+					<i class="icon-play on-left"></i>
+					Start
+				</a>
+				<a id="pause" class="button success">
+					<i class="icon-pause on-left"></i>
+					Pauza
+				</a>
+
+				<a id="reload" class="button danger">
+					<i class="icon-spin on-left"></i>
+					Przeładuj
+				</a>
+
+				<a id="default" class="button danger">
+					<i class="icon-tools on-left"></i>
+					Ustawienia domyślne
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<legend>Ustawienia</legend>
+			</div>
+			<div class="span3" style="margin-left: 0">
+				<label>Grawitacja [Oś X]</label>
+				<input id="gravityX" type="number" value="0.0"  max="5.0" min="-5.0" step="0.2"/>
+				<label>Grawitacja [Oś Y]</label>
+				<input id="gravityY" type="number" value="0.0" max="5.0" min="-5.0" step="0.2">
+			</div>
+			<div class="span3">
+				<label>Lepkość</label>
+				<input id="viscosity" type="number" value="2.0" max="5.0" min="0.0" step="0.5">
+				<label>Tarcie</label>
+				<input id="friction" type="number" value="0.05" max="1.0" min="0.0" step="0.05">
+			</div>
+			<div class="span3">
+				<label>Siła pola</label>
+				<input id="mouseForce" type="number" value="10" max="20" min="0" step="5">
+				<div class="input-control checkbox" style="margin-top: 10px">
+					<label>
+						<input id="repel" type="checkbox" />
+						<span class="check"></span>
+						Odpychaj
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/index.js"></script>
+</body>
+</html>
