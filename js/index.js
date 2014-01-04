@@ -435,7 +435,11 @@ var MOUSE_FORCE = parseInt(localStorage.getItem('MOUSE_FORCE')),
 					return false;
 				};
 
-				canvas.touchend = function (e) {
+				canvas.addEventListener("touchstart", touchDown, false);
+	            canvas.addEventListener("touchmove", touchXY, true);
+	            canvas.addEventListener("touchend", touchUp, false);
+
+				function touchDown (e) {
 					mouse.down = true;
 					return false;
 				};
@@ -445,7 +449,7 @@ var MOUSE_FORCE = parseInt(localStorage.getItem('MOUSE_FORCE')),
 					return false;
 				};
 
-				canvas.touchstart = function (e) {
+				function touchUp (e) {
 					mouse.down = false;
 					return false;
 				};
@@ -457,7 +461,7 @@ var MOUSE_FORCE = parseInt(localStorage.getItem('MOUSE_FORCE')),
 					return false;
 				};
 
-				canvas.ontouchmove = function (e) {
+				function touchXY (e) {
 					var rect = canvas.getBoundingClientRect();
 					mouse.x = e.clientX - rect.left;
 					mouse.y = e.clientY - rect.top;
