@@ -435,12 +435,29 @@ var MOUSE_FORCE = parseInt(localStorage.getItem('MOUSE_FORCE')),
 					return false;
 				};
 
+				canvas.touchend = function (e) {
+					mouse.down = true;
+					return false;
+				};
+
 				canvas.onmouseup = function (e) {
 					mouse.down = false;
 					return false;
 				};
 
+				canvas.touchstart = function (e) {
+					mouse.down = false;
+					return false;
+				};
+
 				canvas.onmousemove = function (e) {
+					var rect = canvas.getBoundingClientRect();
+					mouse.x = e.clientX - rect.left;
+					mouse.y = e.clientY - rect.top;
+					return false;
+				};
+
+				canvas.ontouchmove = function (e) {
 					var rect = canvas.getBoundingClientRect();
 					mouse.x = e.clientX - rect.left;
 					mouse.y = e.clientY - rect.top;
